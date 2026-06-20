@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwucxqtoakuy6"
-path="res://.godot/imported/background_blue_distortion_640x320.png-87ef45e84d56dee76f30b0eed37ee865.ctex"
+path="res://.godot/imported/background_blue_distortion_640x320.png-c0d6c43aa0923368bfb572daa3855700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Miscellanious Assets Dump/backgrounds/background_blue_distortion_640x320.png"
-dest_files=["res://.godot/imported/background_blue_distortion_640x320.png-87ef45e84d56dee76f30b0eed37ee865.ctex"]
+source_file="res://Miscellanious Assets Dump/Image/backgrounds/background_blue_distortion_640x320.png"
+dest_files=["res://.godot/imported/background_blue_distortion_640x320.png-c0d6c43aa0923368bfb572daa3855700.ctex"]
 
 [params]
 
