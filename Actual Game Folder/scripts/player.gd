@@ -62,6 +62,10 @@ func _physics_process(delta: float) -> void:
 # we can add ways to increase your spin later to give the player more control
 func _on_body_entered(_body: Node) -> void:
 	spin_velocity -= spin_velocity_drop_on_collision
+
+	var camera := get_viewport().get_camera_2d()
+	if camera and camera.has_method("add_trauma"):
+		camera.add_trauma(0.25)
 	pass
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:

@@ -2,11 +2,24 @@ extends Camera2D
 
 @export var target : Node2D
 @export var follow_magnitude : float = 2
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var shake_decay : float = 4.0
+@export var shake_max_offset : float = 8.0
 
+var trauma : float = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	global_position = global_position.lerp(target.global_position,follow_magnitude * delta)
+
+	if trauma > 0.0:
+		trauma = max(trauma - shake_decay * delta, 0.0)
+		var amount := trauma * trauma
+		offset = Vector2(
+			randf_range(-1.0, 1.0) * shake_max_offset * amount,
+			randf_range(-1.0, 1.0) * shake_max_offset * amount
+		)
+	else:
+		offset = Vector2.ZERO
+
+func add_trauma(amount: float) -> void:
+	trauma = min(trauma + amount, 1.0)
